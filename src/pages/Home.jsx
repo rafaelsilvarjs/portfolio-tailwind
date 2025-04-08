@@ -15,7 +15,7 @@ export default function Home() {
           Transformo dados em insights e aplicações web modernas. Tenho
           experiência sólida em Power BI, Python, JavaScript, HTML, CSS, SQL e
           MongoDB. Especialista em ETL, dashboards e soluções visuais integradas
-          com OutSystems e Looker Studio.
+          com OutSystems.
         </p>
 
         {/* Botões */}
