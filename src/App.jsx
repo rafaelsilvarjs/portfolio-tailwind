@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Dashboards from "./pages/Dashboards";
@@ -7,11 +8,23 @@ import Contato from "./pages/Contato";
 import CpfValidator from "./pages/CpfValidator";
 import ImcCalculator from "./pages/ImcCalculator";
 import ConversorMoeda from "./pages/ConversorMoeda";
+import Loader from "./components/Loader"; // 👈 Aqui está o import
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000); // tempo de exibição
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />; // 👈 Loader animado personalizado
+  }
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <nav className="bg-gray-800 p-4 flex gap-4 justify-center flex-wrap shadow-md">
+      <nav className="bg-gray-800 p-4 flex gap-4 justify-center flex-wrap shadow-md z-10">
         <Link to="/" className="hover:text-blue-400 font-semibold">Início</Link>
         <Link to="/dashboards" className="hover:text-blue-400 font-semibold">Dashboards</Link>
         <Link to="/javascript" className="hover:text-blue-400 font-semibold">JavaScript</Link>
@@ -32,11 +45,4 @@ export default function App() {
     </div>
   );
 }
-
-
-
-
-
-
-
 
