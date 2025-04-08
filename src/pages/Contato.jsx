@@ -67,7 +67,3 @@ export default function Contato() {
     </div>
   );
 }
-
-
-
-

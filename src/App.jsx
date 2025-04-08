@@ -4,6 +4,9 @@ import Dashboards from "./pages/Dashboards";
 import JavaScript from "./pages/JavaScript";
 import Python from "./pages/Python";
 import Contato from "./pages/Contato";
+import CpfValidator from "./pages/CpfValidator";
+import ImcCalculator from "./pages/ImcCalculator";
+import ConversorMoeda from "./pages/ConversorMoeda";
 
 export default function App() {
   return (
@@ -22,11 +25,17 @@ export default function App() {
         <Route path="/javascript" element={<JavaScript />} />
         <Route path="/python" element={<Python />} />
         <Route path="/contato" element={<Contato />} />
+        <Route path="/validador-cpf" element={<CpfValidator />} />
+        <Route path="/imc" element={<ImcCalculator />} />
+        <Route path="/conversor-moeda" element={<ConversorMoeda />} />
       </Routes>
     </div>
   );
 }
-// Atualização para forçar novo deploy
+
+
+
+
 
 
 
